@@ -48,7 +48,8 @@ Trang **Users Management** phía Admin gồm các thành phần chính:
 | 20  | **Cột CREATED & UPDATED** — Thông tin thừa | Cả 2 cột đều hiển thị avatar nhỏ + "Tôi là Admin" + ngày giờ. Avatar nhỏ trong ô bảng (~16px) **gần như không nhận diện được**, chỉ thêm noise thị giác. Thông tin "ai tạo/sửa" hiếm khi cần xem trên list view.                                                                   | **Nielsen #8** (Aesthetic & Minimalist Design), **Shneiderman #8** (Reduce Short-Term Memory Load)                                                | **1**                  | Chỉ hiển thị ngày giờ trên list view. Đưa thông tin "Created by / Updated by" vào trang detail hoặc tooltip khi hover. Giảm clutter cho bảng.                                                                                  | GUI-04         |
 | 21  | **Nút "Add User"** — vị trí                | Nút **"+ Add User"** nằm ở **góc trên phải**, cùng hàng với ô Search. Trên màn hình nhỏ, nút này có thể bị ẩn hoặc xuống hàng mới. Ngoài ra, không rõ nút này tạo user mới trực tiếp hay mở form riêng.                                                                            | **Norman #1** (Visibility), **Shneiderman #2** (Universal Usability)                                                                              | **1**                  | Đảm bảo nút Add User luôn hiển thị trên mọi viewport. Cân nhắc đặt floating action button (FAB) trên mobile. Text nút nên ghi rõ: "+ Add New User".                                                                            | GUI-05, GUI-11 |
 | 22  | **Bảng** — Row hover/selection state       | Không quan sát được trạng thái **hover** trên hàng bảng từ ảnh tĩnh. Nếu hàng không có hiệu ứng hover (đổi màu nền nhẹ), người dùng khó theo dõi dòng nào đang xem, đặc biệt với bảng rộng nhiều cột.                                                                              | **Nielsen #1** (Visibility of System Status), **Norman #2** (Feedback)                                                                            | **1**                  | Thêm `tr:hover { background-color: #f5f8ff; }` hoặc tương tự. Dùng zebra striping (dòng chẵn/lẻ màu xen kẽ) để tăng khả năng đọc bảng rộng.                                                                                    | GUI-04, GUI-11 |
-| 23  | **Toàn trang** — Keyboard accessibility    | Không thể kiểm chứng từ ảnh tĩnh, nhưng cần đảm bảo: (1) Focus ring hiển thị rõ khi Tab qua các element, (2) Icon actions (Edit/Delete) có thể kích hoạt bằng Enter/Space, (3) Dropdown filter ROLE/STATUS có thể dùng Arrow keys, (4) Pagination có thể điều hướng bằng bàn phím. | **Shneiderman #2** (Universal Usability), **Nielsen #7** (Flexibility & Efficiency), **WCAG 2.1**                                                 | **2**                  | Kiểm tra thực tế bằng cách dùng Tab + Enter trên trang. Đảm bảo `tabindex` đúng cho tất cả interactive elements. Thêm `aria-label` cho icon buttons. Focus ring phải visible (không bị CSS `outline: none` ẩn đi).             | GUI-12, GUI-13 |
+| 23  | **Toàn trang** — Keyboard accessibility    | (Đã kiểm chứng thực tế: PASS) Focus ring di chuyển logic, hiển thị rõ ràng, phím Enter kích hoạt được các action icons bình thường. Không phát hiện lỗi accessibility cơ bản.                                                | **Shneiderman #2** (Universal Usability), **Nielsen #7** (Flexibility & Efficiency), **WCAG 2.1**                                                 | **0**                  | Không cần sửa (tính năng hoạt động đúng kỳ vọng).                                                                                                                                                                                              | GUI-12 |
+| 24  | **Responsive** — Sidebar & Bảng            | Khi thu nhỏ màn hình, bảng xuất hiện thanh cuộn ngang (chống vỡ layout tốt). Tuy nhiên, sidebar không tự động collapse để nhường không gian cho nội dung, dù icon hamburger (≡) đã xuất hiện. <br> ![Lỗi Responsive](img/C1_GUI-05_Responsive.png) | **Shneiderman #2** (Universal Usability), **Nielsen #7** (Flexibility & Efficiency)                                                               | **2**                  | Tự động collapse sidebar thành dạng icon hoặc ẩn hẳn vào hamburger menu khi kích thước màn hình nhỏ.                                                                                                                           | GUI-05, GUI-33 |
 
 ---
 
@@ -60,21 +61,22 @@ Trang **Users Management** phía Admin gồm các thành phần chính:
 | GUI-02       | Typography nhất quán     | **Failed**  | ALL CAPS header bảng; tên user không nhất quán (CAPS vs Title Case). Xem Finding #3, #19.                                     |
 | GUI-03       | Bảng màu nhất quán       | **Failed**  | Nút Export dùng đỏ (destructive color) cho action an toàn. Xem Finding #1.                                                    |
 | GUI-04       | Canh lề & Spacing        | **Partial** | Layout tổng thể OK, nhưng cột CREATED/UPDATED có quá nhiều thông tin chen chúc. Xem Finding #20.                              |
-| GUI-05       | Responsive design        | **N/A**     | Cần test trên màn hình nhỏ hơn. Bảng nhiều cột có nguy cơ tràn.                                                               |
-| GUI-06       | Empty state              | **N/A**     | Cần test bằng cách tìm kiếm chuỗi không tồn tại.                                                                              |
-| GUI-07       | Loading state            | **N/A**     | Cần test bằng cách refresh hoặc lọc.                                                                                          |
+| GUI-05       | Responsive design        | **Partial** | Bảng có thanh cuộn ngang chống vỡ layout, nhưng sidebar không tự động collapse. Xem Finding #24.                              |
+| GUI-06       | Empty state              | **Passed**  | Bảng hiển thị thông báo rõ ràng "No users found matching your filters." khi không có dữ liệu.                                                 |
+| GUI-07       | Loading state            | **Passed**  | Hệ thống hiển thị spinner khi chuyển trang, báo hiệu rõ ràng trạng thái tải dữ liệu.                                          |
 | GUI-08       | i18n EN/VI               | **Failed**  | UI = English nhưng data hiển thị "Tôi là Admin" (Vietnamese). Tiêu đề "Users Management" sai ngữ pháp. Xem Finding #2, #18.   |
 | GUI-09       | Icon rõ ràng & nhất quán | **Failed**  | Icon action thiếu tooltip; thiếu sort icon trên cột; thiếu action icons cho Block/Reset. Xem Finding #6, #8, #11.             |
 | GUI-10       | Avatar hiển thị đúng     | **Failed**  | Avatar initials không nhất quán (2-4 ký tự), chữ bị nhỏ khó đọc. Xem Finding #4.                                              |
-| GUI-11       | Button states            | **N/A**     | Cần hover thực tế để kiểm tra. Tuy nhiên action icons quá nhỏ. Xem Finding #7.                                                |
-| GUI-12       | Keyboard navigation      | **N/A**     | Cần test thực tế. Xem Finding #23.                                                                                            |
-| GUI-13       | ARIA & Heading           | **N/A**     | Cần inspect bằng DevTools.                                                                                                    |
+| GUI-11       | Button states            | **Passed**  | Các nút có hiệu ứng đổi màu khi hover báo hiệu click được (dù không hiện icon bàn tay). Vẫn lưu ý icon action nhỏ (Finding #7). |
+| GUI-12       | Keyboard navigation      | **Passed**  | Hệ thống hỗ trợ điều hướng bằng phím Tab logic (focus ring rõ ràng) và phím Enter kích hoạt được action icons.                |
+| GUI-13       | ARIA & Heading           | **Passed**  | Kiểm tra mã HTML bằng DevTools cho thấy icon action (như Edit) có thuộc tính `aria-label="Edit user"`, hỗ trợ tốt cho trình đọc màn hình. |
 | GUI-14       | Label form field         | **Failed**  | Ô search chỉ có placeholder, không có label visible. Xem Finding #9.                                                          |
 | GUI-22       | Dropdown search          | **Failed**  | Filter ROLE/STATUS ẩn trong icon nhỏ trên header cột, khó phát hiện. Xem Finding #10.                                         |
 | GUI-24       | Placeholder ≠ Label      | **Failed**  | Search box dùng placeholder "Search users..." thay cho label. Xem Finding #9.                                                 |
 | GUI-27       | Sidebar active state     | **Passed**  | "Users Management" được highlight xanh dương, rõ ràng.                                                                        |
 | GUI-28       | Breadcrumb               | **Failed**  | Không có breadcrumb. Xem Finding #5.                                                                                          |
 | GUI-32       | Pagination               | **Partial** | Có phân trang và thông tin "1-5 of 50", nhưng "Go to page" thiếu rõ ràng; mặc định 5 dòng/trang quá ít. Xem Finding #15, #16. |
+| GUI-33       | Sidebar collapse/expand  | **Failed**  | Sidebar không tự collapse trên màn hình nhỏ dù đã có icon hamburger. Xem Finding #24.                                         |
 | GUI-39       | Màu trạng thái           | **Passed**  | Status "Active" badge màu xanh lá phù hợp quy ước. (Cần verify Blocked state.)                                                |
 | GUI-41       | Badge/counter            | **Passed**  | Support requests có badge đỏ "4" trên sidebar.                                                                                |
 
@@ -86,9 +88,9 @@ Trang **Users Management** phía Admin gồm các thành phần chính:
 | --------------------- | ----------------------- | --------- | ---------------------------------------------------- |
 | **4 — Catastrophe**   | Usability catastrophe   | **0**     | —                                                    |
 | **3 — Major**         | Major usability problem | **2**     | #1 (Export đỏ), #7 (Action icons nhỏ sát nhau)       |
-| **2 — Minor**         | Minor usability problem | **9**     | #2, #3, #4, #5, #6, #8, #10, #11, #12, #23           |
+| **2 — Minor**         | Minor usability problem | **9**     | #2, #3, #4, #5, #6, #8, #10, #11, #12, #24           |
 | **1 — Cosmetic**      | Cosmetic problem only   | **9**     | #9, #13, #14, #15, #16, #17, #18, #19, #20, #21, #22 |
-| **0 — Not a problem** | Not a usability problem | **0**     | —                                                    |
+| **0 — Not a problem** | Not a usability problem | **1**     | #23                                                  |
 
 ---
 
@@ -96,9 +98,9 @@ Trang **Users Management** phía Admin gồm các thành phần chính:
 
 | Aspect                       | Findings liên quan                                     | Số lượng |
 | ---------------------------- | ------------------------------------------------------ | -------- |
-| **IA-01** — Chuẩn UI chung   | #1, #2, #3, #4, #11, #13, #14, #18, #19, #20, #22, #23 | 12       |
+| **IA-01** — Chuẩn UI chung   | #1, #2, #3, #4, #11, #13, #14, #18, #19, #20, #22, #23, #24 | 13       |
 | **IA-02** — Forms            | #9, #10                                                | 2        |
-| **IA-03** — Navigation       | #5, #6, #15, #16, #17                                  | 5        |
+| **IA-03** — Navigation       | #5, #6, #15, #16, #17, #24                             | 6        |
 | **IA-04** — Feedback / State | #7, #8, #12, #21                                       | 4        |
 
 ---
@@ -111,10 +113,10 @@ Trang **Users Management** phía Admin gồm các thành phần chính:
 | **Nielsen #6** — Recognition Rather Than Recall    | 5              |
 | **Shneiderman #1** — Strive for Consistency        | 5              |
 | **Shneiderman #8** — Reduce Short-Term Memory Load | 4              |
-| **Nielsen #7** — Flexibility & Efficiency          | 4              |
+| **Nielsen #7** — Flexibility & Efficiency          | 5              |
 | **Norman #1** — Visibility                         | 4              |
 | **Nielsen #1** — Visibility of System Status       | 3              |
-| **Shneiderman #2** — Seek Universal Usability      | 3              |
+| **Shneiderman #2** — Seek Universal Usability      | 4              |
 
 ---
 
