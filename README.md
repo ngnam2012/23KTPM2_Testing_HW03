@@ -33,4 +33,16 @@
 
 ## Video Demo
 
-[Link Video Demo Agent Skill] <!-- Điền link video vào đây -->
+[https://youtu.be/AR2RLUP8oq8] <!-- Điền link video vào đây -->
+
+## Bảng tự đánh giá (Self-Assessment)
+
+| **STT** | **Tiêu chí**                                                                                    | **Điểm** | **Tự đánh giá** |
+| ------- | ----------------------------------------------------------------------------------------------- | -------- | --------------- |
+| **1a**  | Task 1A — Checklist dùng chung (> 40 mục, IA-01…IA-04) + nguồn tham khảo + prompt AI _(nhóm)_   | 15       | 15              |
+| **1b**  | Task 1B — Chạy checklist trên ≥ 3 màn hình + bug report _(cá nhân)_                             | 15       | 15              |
+| **2**   | Task 2 — User testing với 5 người dùng thật (kịch bản + 5 phiên + phân tích → Usability Report) | 25       | 25              |
+| **3**   | Task 3 — Ma trận Cross-Browser / Cross-Platform (3 OS × 5 browser × 3 loại thiết bị)            | 25       | 25              |
+| **4**   | Nộp Bug & Usability Findings (Google Form) + log tổng hợp                                       | 10       | 10              |
+| **5**   | Agent Skills                                                                                    | 10       | 10              |
+|         | **Tổng**                                                                                        | **100**  | **100**         |
