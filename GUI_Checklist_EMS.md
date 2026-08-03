@@ -152,6 +152,49 @@
 
 ---
 
+## Phụ lục: Prompt AI sử dụng để sinh Checklist
+
+### Prompt 1: Sinh bộ checklist ban đầu
+
+- **Mục tiêu**: Tạo ra khung checklist cơ bản phủ 4 khía cạnh giao diện (IA).
+- **Nội dung câu lệnh**:
+
+  ```text
+  Đóng vai là một chuyên gia kiểm thử phần mềm (QA/QC Engineer) chuyên về GUI và Usability. Tôi đang cần tạo một Checklist GUI cho một hệ thống quản lý sự kiện (EMS) trên nền tảng Web.
+  Link: https://prod-dev.ems-fitus.cloud
+
+  Tài khoản Admin (cho kịch bản A và C, và phần admin của D): admin@gmail.com / Admin@123 - tài khoản phải có role ADMIN trên EMS.
+
+  Hãy tạo cho tôi một bảng Checklist gồm ít nhất 40 tiêu chí, dựa trên các nguyên tắc chuẩn: 10 Usability Heuristics của Jakob Nielsen, 6 nguyên tắc thiết kế của Don Norman và 8 quy tắc vàng của Ben Shneiderman.
+
+  Vui lòng phân loại các tiêu chí này thành 4 nhóm chính sau:
+
+  IA-01: Chuẩn UI chung (layout, typography, màu sắc, tính nhất quán, trạng thái empty/loading).
+  IA-02: Forms (label, validation, vị trí báo lỗi, trường bắt buộc).
+  IA-03: Navigation (menu, breadcrumb, tab, nút back, deep link).
+  IA-04: Feedback / state (toast, dialog xác nhận, progress bar, màu trạng thái).
+  Trình bày dưới dạng bảng gồm các cột: [ID], [Aspect (IA)], [Tên tiêu chí], [Mô tả chi tiết cách test], [Nguyên tắc tham chiếu].
+  ```
+
+### Prompt 2: Tinh chỉnh cho ứng dụng EMS (Event Management System)
+
+- **Mục tiêu**: Bổ sung các tiêu chí đặc thù của giao diện web EMS.
+- **Nội dung câu lệnh**:
+
+  ```text
+  Dựa trên checklist chung vừa sinh, hãy phân tích các điểm thiếu sót khi áp dụng thực tế lên một hệ thống quản lý sự kiện như EMS.
+
+  Biết rằng hệ thống EMS có các tính năng đặc thù như:
+  - kéo thả sắp xếp danh mục (reorder)
+  - upload banner tỉ lệ lớn (24:9)
+  - đa ngôn ngữ Anh - Việt ở Header
+  - phân quyền xem nội bộ (Internal Note) cho Admin
+
+  Hãy gợi ý cho tôi các tiêu chí cụ thể cần bổ sung thủ công để bao phủ các tính năng này.
+  ```
+
+---
+
 ## Nguồn tham khảo
 
 1. Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design.* Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
