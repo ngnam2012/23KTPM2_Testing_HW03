@@ -1,0 +1,47 @@
+commit 8d3edc35c47e757cab4269167d922e3d52f9b104
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Mon Aug 3 22:08:39 2026 +0700
+
+    Add AI prompts to GUI Checklist
+
+commit 6402dfa32494bd1d65f3d8d168f872515c9d61f3
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Mon Aug 3 22:00:23 2026 +0700
+
+    Complete AI Audit Report, update Bug Findings, and add agent skills
+
+commit e85eac727e7f6335f68a62ff91adcef01ec4f8e1
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Sun Aug 2 23:55:59 2026 +0700
+
+    Update Bug and Usability Findings with images, remove duplicates, sync counts
+
+commit e41acf2a36d8ee23e30849d7877c5065547c3939
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Sat Aug 1 23:06:11 2026 +0700
+
+    hoàn thành khảo sát và partial của task 3
+
+commit f8d77f0fade8aae9b97526a424f84d4829e12742
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Sat Aug 1 20:38:54 2026 +0700
+
+    template for Task 2
+
+commit ba72ab48b62e11406938a0054618a56221bac0e9
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Fri Jul 31 20:40:09 2026 +0700
+
+    edit report for 3 screens
+
+commit 3ed93b250ca62ac13e9f3503351908bdf7e3e095
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Wed Jul 29 22:37:32 2026 +0700
+
+    add initial result for analysis
+
+commit 57884057752866cb878dad802562be4bd68fe6a9
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Wed Jul 29 21:04:37 2026 +0700
+
+    Initial commit
