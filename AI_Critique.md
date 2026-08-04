@@ -1,0 +1,9 @@
+# AI Critique (Phản biện AI)
+
+Quá trình sử dụng AI (Gemini) cho bài tập kiểm thử GUI & Usability trên EMS mang lại tốc độ và sự toàn diện khi thiết kế checklist, nhưng cũng bộc lộ một số giới hạn rõ rệt:
+
+1. **Thiếu hụt ngữ cảnh động (Dynamic Context):** Khi phân tích ảnh chụp màn hình tĩnh (như trang Users List hay Form Assign Role), AI chỉ nhìn thấy bề nổi. Nó có thể chỉ ra lỗi thiếu dấu sao đỏ ở trường bắt buộc, nhưng không thể biết chắc chắn rằng khi bấm "Save" mà không nhập dữ liệu thì hệ thống có báo lỗi (validation) hay không. Nó đưa ra giả định thay vì khẳng định xác đáng.
+2. **Hiện tượng "ảo giác" (Hallucination) và bịa lỗi:** AI có thể "nhìn nhầm" các chi tiết UI do hạn chế về nhận diện hình ảnh, dẫn đến việc bịa ra những lỗi hoàn toàn không có thật (ví dụ: báo cáo sai màu sắc nút bấm, sai font chữ, hoặc tưởng tượng ra một thành phần UI bị lệch dù thực tế nó hiển thị chuẩn). Ngoài ra, ở tác vụ logic như thiết kế ma trận Cross-browser, AI có lúc đề xuất thiếu thực tế (ví dụ gợi ý test Safari trên Windows 11). Điều này đòi hỏi con người phải luôn kiểm chứng lại (verify) bằng mắt thật trên hệ thống thực.
+3. **Sự máy móc trong đánh giá Heuristic:** AI đôi khi gán ép một lỗi nhỏ (như màu nút Export đỏ) vào quá nhiều nguyên tắc của Nielsen, Norman và Shneiderman cùng lúc để cố làm "dày" báo cáo, dẫn đến rườm rà và làm loãng mức độ nghiêm trọng thực sự của lỗi.
+
+**Nguyên tắc cộng tác rút ra:** AI là một trợ lý Exploratory Testing tuyệt vời để tạo framework (checklist, test plan) và "quét" bề mặt UI nhanh chóng. Tuy nhiên, nó không thể thay thế thao tác tương tác thật. Người kiểm thử phải đóng vai trò "Human-in-the-Loop" (HITL): dùng AI chỉ ra _nơi có thể có lỗi_, sau đó tự mình kiểm chứng các hành vi ẩn (state loading, error toast, keyboard navigation) trước khi đưa ra kết luận cuối cùng.
