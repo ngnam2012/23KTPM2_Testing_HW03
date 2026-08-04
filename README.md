@@ -33,7 +33,7 @@
 
 ## Video Demo
 
-[https://youtu.be/AR2RLUP8oq8] <!-- Điền link video vào đây -->
+[https://youtu.be/AR2RLUP8oq8]
 
 ## Bảng tự đánh giá (Self-Assessment)
 

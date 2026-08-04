@@ -16,13 +16,13 @@
 
 ## 2. Thông tin người tham gia (Participants Profile)
 
-| Participant ID | Tên (ẩn danh một phần) |
-| :------------- | :--------------------- |
-| P1             | Khôn Chí               |
-| P2             | Văn Minh               |
-| P3             | Thái Bảo               |
-| P4             | Thành Đạt              |
-| P5             | Gia Kiệt               |
+| Participant ID | Tên (ẩn danh một phần) | Số điện thoại |
+| :------------- | :--------------------- | :------------ |
+| P1             | Khôn Chí               | 082****788    |
+| P2             | Văn Minh               | 096****867    |
+| P3             | Thái Bảo               | 097****831    |
+| P4             | Thành Đạt              | 070****447    |
+| P5             | Gia Kiệt               | 093****262    |
 
 _(Ghi chú: Độ tuổi, Chuyên môn và Kinh nghiệm dùng phần mềm không được thu thập trong form khảo sát nên được ẩn đi)_
 
