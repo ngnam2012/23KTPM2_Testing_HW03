@@ -1,4 +1,16 @@
-﻿commit 21c527aab27b6eed804c56998f5f7604432b0dec
+﻿commit 6e0b46a4b69f8ce7f0860b7e42e63b13dc543d90
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Tue Aug 4 09:59:15 2026 +0700
+
+    Update Main Report with video link, phone numbers, and fix image paths
+
+commit 0fda0435301a602f16a7fb297c8e8e4b29e6c921
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Tue Aug 4 09:48:44 2026 +0700
+
+    Update gitcommitlog.txt
+
+commit 21c527aab27b6eed804c56998f5f7604432b0dec
 Author: ngnam2012 <nam20122005@gmail.com>
 Date:   Tue Aug 4 09:48:32 2026 +0700
 
