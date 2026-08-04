@@ -1,4 +1,16 @@
-﻿commit 6e0b46a4b69f8ce7f0860b7e42e63b13dc543d90
+commit e098ea87d615679f14a4881fb1fcb27b361c733f
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Tue Aug 4 10:03:22 2026 +0700
+
+    Update Main Report with Github link
+
+commit afc97f9be8cec4dea67034dec46763e5e3438d5d
+Author: ngnam2012 <nam20122005@gmail.com>
+Date:   Tue Aug 4 09:59:16 2026 +0700
+
+    Update gitcommitlog.txt
+
+commit 6e0b46a4b69f8ce7f0860b7e42e63b13dc543d90
 Author: ngnam2012 <nam20122005@gmail.com>
 Date:   Tue Aug 4 09:59:15 2026 +0700
 
@@ -74,7 +86,7 @@ commit e41acf2a36d8ee23e30849d7877c5065547c3939
 Author: ngnam2012 <nam20122005@gmail.com>
 Date:   Sat Aug 1 23:06:11 2026 +0700
 
-    ho├án th├ánh khß║úo s├ít v├á partial cß╗ºa task 3
+    hoàn thành khảo sát và partial của task 3
 
 commit f8d77f0fade8aae9b97526a424f84d4829e12742
 Author: ngnam2012 <nam20122005@gmail.com>
